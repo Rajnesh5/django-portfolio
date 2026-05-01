@@ -1,0 +1,372 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ══════════════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════════════ -->
+<section id="hero" class="hero-section">
+  <!-- Decorative orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="container">
+    <div class="row align-items-center min-vh-100 py-5">
+
+      <!-- LEFT: Text Content -->
+      <div class="col-lg-6 order-2 order-lg-1" style="animation: fadeInUp 0.8s ease forwards">
+        <div class="hero-badge">
+          <span class="pulse" style="display:inline-block;width:8px;height:8px;background:#10b981;border-radius:50%"></span>
+          Available for opportunities
+        </div>
+
+        <h1 class="hero-name">
+          Hi, I'm <br />
+          <span class="gradient-text">Rajnesh Kr.</span><br />
+          <span class="gradient-text">Ranjan</span>
+        </h1>
+
+        <p class="hero-role">
+          <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
+        </p>
+
+        <p class="hero-desc">
+          Lead Backend Engineer with <strong>4+ years</strong> building scalable systems,
+          architecting REST APIs, and driving AI-powered automation at Tata Consultancy Services.
+        </p>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num counter-num" data-target="4" data-suffix="+">0+</div>
+            <div class="hero-stat-label">Years Experience</div>
+          </div>
+          <div>
+            <div class="hero-stat-num counter-num" data-target="100" data-suffix="+">0+</div>
+            <div class="hero-stat-label">REST APIs Built</div>
+          </div>
+          <div>
+            <div class="hero-stat-num counter-num" data-target="60" data-suffix="%">0%</div>
+            <div class="hero-stat-label">Team Productivity ↑</div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="d-flex flex-wrap gap-3">
+          <a href="{% url 'core:projects' %}" class="btn-primary-custom">
+            <i class="fas fa-rocket"></i> View Projects
+          </a>
+          <a href="#resume" class="btn-outline-custom">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Avatar -->
+      <div class="col-lg-6 order-1 order-lg-2 text-center mb-5 mb-lg-0" style="animation: fadeInDown 0.8s ease forwards">
+        <div class="hero-avatar mx-auto">👨‍💻</div>
+        <!-- Floating tech badges -->
+        <div style="position:relative;display:inline-block">
+          <span style="position:absolute;top:-30px;left:60px;background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.4);color:var(--accent);padding:6px 14px;border-radius:50px;font-size:0.8rem;font-weight:600;backdrop-filter:blur(10px);animation:float 5s ease-in-out infinite">
+            <i class="fab fa-python"></i> Python
+          </span>
+          <span style="position:absolute;bottom:-30px;right:40px;background:rgba(6,182,212,0.15);border:1px solid rgba(6,182,212,0.4);color:var(--accent-2);padding:6px 14px;border-radius:50px;font-size:0.8rem;font-weight:600;backdrop-filter:blur(10px);animation:float 5s ease-in-out infinite;animation-delay:-2.5s">
+            <i class="fab fa-aws"></i> AWS
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);animation:float 2s ease-in-out infinite">
+    <a href="#about" style="color:var(--text-muted);text-decoration:none;font-size:0.8rem;display:flex;flex-direction:column;align-items:center;gap:6px">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     ABOUT SECTION
+══════════════════════════════════════════════ -->
+<section id="about" class="section section-alt">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">About Me</span>
+      <h2 class="section-title">The Engineer Behind the Code</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="row align-items-center g-5">
+      <!-- Avatar Column -->
+      <div class="col-lg-4 text-center" data-aos="fade-right">
+        <div class="about-img-wrapper d-inline-block">
+          <div class="about-avatar mx-auto">👨‍💻</div>
+          <div class="about-badge-float badge-tl">⚡ Backend Expert</div>
+          <div class="about-badge-float badge-br">☁️ AWS Certified (In Progress)</div>
+        </div>
+      </div>
+
+      <!-- Bio + Timeline -->
+      <div class="col-lg-8" data-aos="fade-left">
+        <h3 style="font-weight:800;font-size:1.8rem;margin-bottom:1rem">
+          Rajnesh Kr. Ranjan
+        </h3>
+        <p style="color:var(--text-secondary);margin-bottom:1rem;line-height:1.9">
+          Lead Backend Engineer at <strong>Tata Consultancy Services, Delhi</strong> with a passion for building
+          systems that scale. I specialise in Python, Django, FastAPI, and REST API architecture —
+          having built and maintained <strong>100+ scalable APIs</strong> with a strong focus on
+          reliability, performance, and low defect rates.
+        </p>
+        <p style="color:var(--text-secondary);margin-bottom:2rem;line-height:1.9">
+          I've led a team of 5 backend engineers, built an <em>AI-powered API generator</em> that reduced
+          development time from days to under 1 hour, and optimised database queries cutting
+          response times by <strong>40%</strong>. B.Tech in Computer Science from Guru Gobind Singh
+          Indraprastha University, Delhi.
+        </p>
+
+        <!-- Info grid -->
+        <div class="row g-3 mb-3">
+          <div class="col-sm-6">
+            <div class="glass-card p-3" style="border-radius:10px">
+              <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Location</div>
+              <div style="font-weight:600">Mahua, Bihar, India</div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="glass-card p-3" style="border-radius:10px">
+              <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Current Role</div>
+              <div style="font-weight:600">Lead Backend Developer, TCS</div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="glass-card p-3" style="border-radius:10px">
+              <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Email</div>
+              <div style="font-weight:600;font-size:0.9rem">rajneshranjan5@gmail.com</div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="glass-card p-3" style="border-radius:10px">
+              <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">LinkedIn</div>
+              <div style="font-weight:600;font-size:0.9rem">
+                <a href="https://linkedin.com/in/rajnesh-ranjan/" target="_blank" style="color:var(--accent);text-decoration:none">linkedin.com/in/rajnesh-ranjan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Timeline -->
+        <h4 style="font-weight:700;margin:2rem 0 1.2rem;font-size:1rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px">Experience</h4>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-period">Jan 2022 – Present</div>
+          <div class="timeline-role">Lead Backend Developer</div>
+          <div class="timeline-company">Tata Consultancy Services, Delhi</div>
+          <div class="timeline-desc">Led team of 5 engineers · Built AI-powered API generator · 100+ scalable REST APIs · 40% query optimization</div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-period">Jul 2021 – Dec 2021</div>
+          <div class="timeline-role">QA Engineer</div>
+          <div class="timeline-company">Tata Consultancy Services, Delhi</div>
+          <div class="timeline-desc">100% test coverage · Automated 200+ test cases · Improved testing efficiency 60%</div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="timeline-period">Jan 2021 – May 2021</div>
+          <div class="timeline-role">SQL Developer (Programmer Analyst Trainee)</div>
+          <div class="timeline-company">Cognizant, Mumbai</div>
+          <div class="timeline-desc">Processed 50K+ patient records daily · 35% DB performance improvement · HIPAA-compliant data integrity</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SKILLS SECTION
+══════════════════════════════════════════════ -->
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Technical Skills</span>
+      <h2 class="section-title">What I Work With</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Backend -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="glass-card p-4">
+          <div class="skill-category-title"><i class="fas fa-server me-2"></i>Backend Development</div>
+          {% for skill in skills %}
+            {% if skill.category == 'Backend' %}
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>{{ skill.name }}</span>
+                <span style="color:var(--accent);font-weight:700">{{ skill.level }}%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-level="{{ skill.level }}"></div>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="glass-card p-4">
+          <div class="skill-category-title"><i class="fas fa-database me-2"></i>Database</div>
+          {% for skill in skills %}
+            {% if skill.category == 'Database' %}
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>{{ skill.name }}</span>
+                <span style="color:var(--accent);font-weight:700">{{ skill.level }}%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-level="{{ skill.level }}"></div>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Cloud & DevOps -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="glass-card p-4">
+          <div class="skill-category-title"><i class="fas fa-cloud me-2"></i>Cloud & DevOps</div>
+          {% for skill in skills %}
+            {% if skill.category == 'Cloud' %}
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>{{ skill.name }}</span>
+                <span style="color:var(--accent);font-weight:700">{{ skill.level }}%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-level="{{ skill.level }}"></div>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Architecture -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+        <div class="glass-card p-4">
+          <div class="skill-category-title"><i class="fas fa-sitemap me-2"></i>Architecture & Design</div>
+          {% for skill in skills %}
+            {% if skill.category == 'Architecture' %}
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>{{ skill.name }}</span>
+                <span style="color:var(--accent);font-weight:700">{{ skill.level }}%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-level="{{ skill.level }}"></div>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech pill cloud -->
+    <div class="text-center mt-5" data-aos="fade-up">
+      <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.2rem;text-transform:uppercase;letter-spacing:1px;font-weight:600">Also comfortable with</p>
+      {% for tech in extra_skills %}
+      <span class="tech-badge">{{ tech }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     FEATURED PROJECTS SECTION
+══════════════════════════════════════════════ -->
+{% if featured_projects %}
+<section id="featured-projects" class="section section-alt">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Portfolio</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="row g-4">
+      {% for project in featured_projects %}
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'1' }}00">
+        <div class="project-card">
+          <div class="project-card-img">
+            {% if project.image %}
+              <img src="{{ project.image.url }}" alt="{{ project.title }}" />
+            {% else %}
+              <i class="fas fa-code" style="color:var(--accent);opacity:0.5"></i>
+            {% endif %}
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-title">{{ project.title }}</div>
+            <div class="project-card-desc">{{ project.short_description|default:project.description|truncatechars:120 }}</div>
+            <div class="mb-2">
+              {% for tech in project.get_tech_list %}
+              <span class="tech-badge">{{ tech }}</span>
+              {% endfor %}
+            </div>
+            <div class="project-links">
+              {% if project.github_url %}
+              <a href="{{ project.github_url }}" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              {% endif %}
+              {% if project.live_url %}
+              <a href="{{ project.live_url }}" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="{% url 'core:projects' %}" class="btn-primary-custom">
+        View All Projects <i class="fas fa-arrow-right fa-sm"></i>
+      </a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+
+<!-- ══════════════════════════════════════════════
+     RESUME SECTION
+══════════════════════════════════════════════ -->
+<section id="resume" class="resume-section">
+  <div class="container">
+    <div class="resume-content" data-aos="fade-up">
+      <h2 class="resume-title">Ready to Work Together?</h2>
+      <p class="resume-subtitle">
+        Download my resume to learn more about my experience, skills, and achievements.
+      </p>
+      <a href="{% url 'core:download_resume' %}" class="btn-download">
+        <i class="fas fa-file-pdf"></i> Download My Resume
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

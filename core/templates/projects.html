@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="section" style="padding-top:120px">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">My Work</span>
+      <h1 class="section-title">All Projects</h1>
+      <div class="section-divider"></div>
+      <p class="mt-3" style="color:var(--text-secondary);max-width:600px;margin:0 auto">
+        A collection of backend systems, REST APIs, and AI-powered tools I've built.
+      </p>
+    </div>
+
+    {% if projects %}
+    <div class="row g-4" id="projects-grid">
+      {% for project in projects %}
+      <div class="col-lg-4 col-md-6 project-item" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'0' }}50">
+        <div class="project-card h-100">
+          <div class="project-card-img">
+            {% if project.image %}
+              <img src="{{ project.image.url }}" alt="{{ project.title }}" />
+            {% else %}
+              <i class="fas fa-code" style="color:var(--accent);opacity:0.4;font-size:3rem"></i>
+            {% endif %}
+            {% if project.is_featured %}
+            <span style="position:absolute;top:12px;right:12px;background:var(--gradient);color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:100px">
+              ⭐ Featured
+            </span>
+            {% endif %}
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-title">{{ project.title }}</div>
+            <div class="project-card-desc">
+              {{ project.short_description|default:project.description|truncatechars:150 }}
+            </div>
+            <div class="mb-3">
+              {% for tech in project.get_tech_list %}
+              <span class="tech-badge">{{ tech }}</span>
+              {% endfor %}
+            </div>
+            <div class="project-links mt-auto">
+              {% if project.github_url %}
+              <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fab fa-github"></i> Code
+              </a>
+              {% endif %}
+              {% if project.live_url %}
+              <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <!-- Empty state -->
+    <div class="text-center py-5" data-aos="fade-up">
+      <div style="font-size:4rem;margin-bottom:1rem">🚧</div>
+      <h3 style="color:var(--text-secondary);font-weight:600">Projects coming soon!</h3>
+      <p style="color:var(--text-muted)">Add projects from the Django admin panel.</p>
+      <a href="/admin/core/project/add/" class="btn-primary-custom mt-3">
+        <i class="fas fa-plus"></i> Add Project
+      </a>
+    </div>
+    {% endif %}
+
+    <!-- Back to home -->
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="{% url 'core:home' %}" class="btn-outline-custom">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
